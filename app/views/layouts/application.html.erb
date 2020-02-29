@@ -15,5 +15,12 @@
     <%= yield %>
 
     <%= react_component "HelloWorld" %>
+    <%= react_component "Calculator", {
+      title: "This is my calculator",
+      first_value: 4,
+      second_value: 5,
+      operator: "-"
+    } %>
+
   </body>
 </html>

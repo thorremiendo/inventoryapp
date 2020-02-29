@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Button from './Button'
 
 const HelloWorld = () => {
     const [visible, setVisible] = useState(true)
@@ -8,9 +9,9 @@ const HelloWorld = () => {
     const [text, setText] = useState("Hello World")
     return(
         <>
-        <button className = "btn btn-primary" onClick = {() => setVisible(!visible)}>
-        Toggle greeting!
-        </button>
+        <Button color="danger" onClick={() => setVisible(!visible)}>
+        Toggle Greeting
+        </Button>
         {visible && <h1>{text}</h1> }
         <input type="text" onChange={ e => setText(e.target.value)} value={text} />
         </>
