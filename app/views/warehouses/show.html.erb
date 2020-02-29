@@ -1,0 +1,50 @@
+<div class="container">
+<h1>Warehouse</h1>
+<!-- <hr /> -->
+<%= link_to "Back to Warehouses", warehouses_path, class: 'btn btn-primary' %>
+<table class="table">
+  <tbody>
+    <tr>
+      <td>Street</td>
+      <td id="warehouse--<%= @warehouse.id %>_street">
+        <%= @warehouse.street %>
+      </td>
+    </tr>
+    <tr>
+      <td>City</td>
+      <td id="warehouse--<%= @warehouse.id %>_city">
+        <%= @warehouse.city %>
+      </td>
+    </tr>
+    <tr>
+      <td>Province</td>
+      <td id="warehouse--<%= @warehouse.id %>_province">
+        <%= @warehouse.province %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div class="container">
+<%= render "stock", warehouse: @warehouse, products: @products, stock: @stock %>
+ <table class="table">
+    <thead>
+      <tr>
+        <th>Products</th>
+        <th>Inventory Count</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @warehouse.products.each do |product| %>
+        <%# <% next if order_item.new_record? %>
+        <tr>
+          <td><%= product.name %></td>
+          <td><%= @warehouse.inventory_count(product) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  </div>
+
+

@@ -1,0 +1,39 @@
+<h1>Product</h1>
+<!-- <hr /> -->
+<table class="table">
+  <tbody>
+    <tr>
+      <td>Name</td>
+      <td id="product--<%= @product.id %>_name">
+        <%= @product.name %>
+      </td>
+    </tr>
+    <tr>
+      <td>SKU</td>
+      <td id="product--<%= @product.id %>_sku">
+        <%= @product.sku %>
+      </td>
+    </tr>  
+    </tbody>
+</table>
+<div class="container">
+<table class="table">
+    <thead>
+      <tr>
+        <th>Warehouse</th>
+        <th>Inventory Count</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @product.warehouses.each do |warehouse| %>
+        <tr>
+          <td><%= warehouse.full_address %></td>
+          <td><%= warehouse.inventory_count(@product) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  </div>
+
+
